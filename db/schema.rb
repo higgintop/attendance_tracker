@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604154544) do
+ActiveRecord::Schema.define(version: 20150604191701) do
+
+  create_table "attendances", force: :cascade do |t|
+    t.date     "date"
+    t.boolean  "present",    default: true
+    t.integer  "student_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "attendances", ["student_id"], name: "index_attendances_on_student_id"
 
   create_table "students", force: :cascade do |t|
     t.string   "name"

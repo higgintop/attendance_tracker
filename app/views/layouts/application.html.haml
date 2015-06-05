@@ -5,6 +5,13 @@
     %title Stepoff
   %body
     = link_to "Students", students_path
+
+    %hr
+    // FORM TEST
+    = form_tag attendances_path, method: :get do
+      = select_date
+      = submit_tag 'View Attendance'
+
     %p.notice= notice
     %p.alert= alert
     = yield

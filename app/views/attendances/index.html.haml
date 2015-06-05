@@ -1,0 +1,11 @@
+//if date was in past - > show this
+= debug(params)
+%hr
+%ul
+  - @attendances.each do |attendance|
+    %li #{attendance.date}  #{attendance.student.name} was present? #{attendance.present}
+// if date is today -> show this (students with checkbox for absent?)
+// if date is in future -> show this
+
+
+
